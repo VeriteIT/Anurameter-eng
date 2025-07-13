@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anura Meter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Barlow', 'Inter', Arial, sans-serif;
+      background: #fafbfc;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      margin-bottom: 24px;
+    }
+    .banner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 16px;
+      border: none;
+      box-shadow: none;
+    }
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+    h2 {
+      font-size: 2rem;
+      font-family: 'Barlow', Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 18px;
+      margin-top: 0;
+    }
+    .focus-title {
+      font-size: 1.3rem;
+      font-family: 'Barlow', Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 28px;
+      margin-top: 36px;
+      text-align: center;
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-family: 'Barlow', Arial, sans-serif;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+    }
+    .focus-cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap;
+      justify-content: center;
+      margin-bottom: 16px;
+      overflow-x: auto;
+      padding-bottom: 18px;
+    }
+    .focus-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(60,72,88,0.13);
+      padding: 20px 14px;
+      min-width: 180px;
+      max-width: 220px;
+      flex: 1 1 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      transition: box-shadow 0.2s;
+    }
+    .focus-card:hover {
+      box-shadow: 0 8px 24px rgba(60,72,88,0.18);
+    }
+    .focus-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+    .data-sources-section {
+      max-width: 900px;
+      margin: 24px auto 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .data-cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .data-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(60,72,88,0.13);
+      padding: 24px 20px;
+      min-width: 220px;
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      transition: box-shadow 0.2s;
+      justify-content: flex-start;
+    }
+    .data-card:hover {
+      box-shadow: 0 8px 24px rgba(60,72,88,0.18);
+    }
+    .data-card h3 {
+      min-height: 48px;
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 10px;
+    }
+    .data-card p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .data-icon {
+      font-size: 2rem;
+      color: #2d7ff9;
+    }
+    .disclaimer-section {
+      max-width: 900px;
+      margin: 32px auto 24px auto;
+      padding: 0 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(60,72,88,0.13);
+      text-align: center;
+    }
+    .disclaimer-section h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+    .disclaimer-section p,
+    .about-section p,
+    .focus-card p,
+    .data-card h3,
+    .data-card p {
+      font-family: 'Barlow', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      margin-top: 0;
+      text-align: left;
+      display: block;
+    }
+    .about-section {
+      max-width: 1200px;
+      margin: 24px auto 0 auto;
+      padding: 0 20px;
+    }
+    .focus-card p {
+      margin: 0;
+      text-align: left;
+      text-indent: 0;
+    }
+    @media (max-width: 700px) {
+      .focus-cards {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+      .focus-card {
+        min-width: 30%;
+        max-width: 32%;
+        flex: 1 1 30%;
+        margin-bottom: 18px;
+      }
+      .focus-card:nth-child(n+4) {
+        min-width: 48%;
+        max-width: 49%;
+        flex: 1 1 48%;
+      }
+    }
+    .anura-btn {
+      background: #672b49;
+      color: #fff;
+      font-family: 'Barlow', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(60,72,88,0.28);
+      transition: box-shadow 0.25s cubic-bezier(.4,2,.6,1), background 0.2s;
+      display: inline-block;
+    }
+    .anura-btn:hover {
+      box-shadow: 0 16px 48px rgba(60,72,88,0.32);
+    }
+    @media (max-width: 900px) {
+      .progress-cards {
+        flex-wrap: wrap !important;
+      }
+    }
+    .dropdown-content a:hover {
+      background: #f5f5f5 !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Banner Section -->
+  <div class="banner" style="position:relative;">
+    <a href="https://manthri.lk/en/anura-meter" target="_blank" rel="noopener noreferrer" style="display:block;">
+      <img src="Anura Meter Banner.png" alt="Anura Meter Banner" style="display:block; width:100%; border:none; box-shadow:none;" />
+    </a>
+    <div style="position:absolute;top:20px;right:24px;z-index:2;">
+      <div class="dropdown" style="position:relative;display:inline-block;">
+        <button class="anura-btn" style="padding:10px 20px;font-size:1rem;">Previous Tracking Initiatives ▼</button>
+        <div class="dropdown-content" style="display:none;position:absolute;right:0;top:110%;background:#fff;min-width:220px;box-shadow:0 4px 18px rgba(60,72,88,0.13);border-radius:8px;overflow:hidden;">
+          <a href="https://manthri.lk/en/imf_tracker" target="_blank" rel="noopener noreferrer" style="display:block;padding:12px 20px;color:#222;text-decoration:none;font-family:'Barlow',Arial,sans-serif;font-size:1rem;">IMF Tracker</a>
+          <a href="https://manthri.lk/en/gotameter" target="_blank" rel="noopener noreferrer" style="display:block;padding:12px 20px;color:#222;text-decoration:none;font-family:'Barlow',Arial,sans-serif;font-size:1rem;">Gota-Meter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About the Anura Meter Section -->
+  <div class="about-section container">
+    <h2>About the Anura Meter</h2>
+    <p style="text-align: justify;">
+      The Anura Meter tracks the progress of selected proposals in President Anura Kumara Dissanayake's 2024 Presidential Election manifesto. The selection focuses on a set of promises considered to be of high public interest. Progress is updated as and when we receive information from the government or other relevant sources. We welcome any assistance that you can provide in improving what is tracked and in updating progress.
+    </p>
+  </div>
+
+  <!-- Areas of Focus Section -->
+  <div class="container" style="margin-top: 40px;">
+    <div class="focus-title">Key Areas of Focus</div>
+    <div class="focus-cards" style="flex-wrap:nowrap;overflow:visible;">
+      <div class="focus-card" style="width:220px;height:220px;align-items:flex-start;padding:20px 14px;">
+        <span class="focus-icon">
+          <!-- Social Protection: Heart SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 24S4 17 4 10.5C4 7 7 4 10.5 4C12.5 4 14 5.5 14 5.5C14 5.5 15.5 4 17.5 4C21 4 24 7 24 10.5C24 17 14 24 14 24Z" stroke="#111" stroke-width="2" fill="white"/></svg>
+        </span>
+        <div>
+          <h3>Social Protection</h3>
+          <p>Policies, programs, and regulatory mechanisms aimed at reducing poverty, vulnerability, and discrimination</p>
+        </div>
+      </div>
+      <div class="focus-card" style="width:220px;height:220px;align-items:flex-start;padding:20px 14px;">
+        <span class="focus-icon">
+          <!-- Economic Reform: Dollar sign SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#111" stroke-width="2" fill="white"/><text x="50%" y="58%" text-anchor="middle" fill="#111" font-size="16" font-family="Arial" dy=".3em">$</text></svg>
+        </span>
+        <div>
+          <h3>Economic Reform</h3>
+          <p style="margin:0;">Focus on investment, trade, public finance, and tax reform </p>
+        </div>
+      </div>
+      <div class="focus-card" style="width:220px;height:220px;align-items:flex-start;padding:20px 14px;">
+        <span class="focus-icon">
+          <!-- Governance: Shield SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 3L24 7V14C24 20 14 25 14 25C14 25 4 20 4 14V7L14 3Z" stroke="#111" stroke-width="2" fill="white"/></svg>
+        </span>
+        <div>
+          <h3>Governance</h3>
+          <p style="margin:0;">Processes and systems of decision making, coordination, and management within the government to ensure greater transparency and accountability</p>
+        </div>
+      </div>
+      <div class="focus-card" style="width:220px;height:220px;align-items:flex-start;padding:20px 14px;">
+        <span class="focus-icon">
+          <!-- Anti-Corruption: Handcuffs SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="19" r="3" stroke="#111" stroke-width="2" fill="white"/><circle cx="19" cy="9" r="3" stroke="#111" stroke-width="2" fill="white"/><path d="M11.5 16.5L16.5 11.5" stroke="#111" stroke-width="2"/></svg>
+        </span>
+        <div>
+          <h3>Anti-Corruption</h3>
+          <p style="margin:0;">Implementing systems and legal frameworks to prevent, detect, and punish corrupt practices within public institutions and government operations</p>
+        </div>
+      </div>
+      <div class="focus-card" style="width:220px;height:220px;align-items:flex-start;padding:20px 14px;">
+        <span class="focus-icon">
+          <!-- Law and Order: Gavel SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="17" y="5" width="6" height="2" rx="1" transform="rotate(45 17 5)" fill="white" stroke="#111" stroke-width="2"/><rect x="7" y="15" width="6" height="2" rx="1" transform="rotate(45 7 15)" fill="white" stroke="#111" stroke-width="2"/><rect x="12" y="10" width="8" height="2" rx="1" transform="rotate(45 12 10)" fill="white" stroke="#111" stroke-width="2"/></svg>
+        </span>
+        <div>
+          <h3>Law and Order</h3>
+          <p style="margin:0;">Delivering justice for past political violence, ensuring accountability for high-profile crimes, and upholding the rule of law</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Statuses and Data Sources Section -->
+  <div class="progress-status-section" style="max-width:1200px;margin:36px auto 36px auto;padding:0 20px;">
+    <div class="focus-title" style="margin-top:0;margin-bottom:18px;">Progress Statuses</div>
+    <div class="progress-cards" style="display:flex;gap:20px;flex-wrap:nowrap;justify-content:center;">
+      <div class="focus-card" style="min-width:160px;max-width:200px;align-items:flex-start;padding:20px 14px;">
+        <img src="Progress statuses/4.1 No update.png" alt="No Update" style="width:48px;height:48px;object-fit:contain;image-rendering:auto;border-radius:6px;margin-bottom:14px;" />
+        <div style="font-weight:700;font-size:1.1rem;font-family:'Barlow',Arial,sans-serif;margin-bottom:6px;">No Update</div>
+        <div style="font-size:16px;font-weight:400;line-height:1.6;font-family:'Barlow',Arial,sans-serif;">No visible action has been taken or recorded by any official source considered</div>
+      </div>
+      <div class="focus-card" style="min-width:160px;max-width:200px;align-items:flex-start;padding:20px 14px;">
+        <img src="Progress statuses/4.2 Initiated.png" alt="Initiated" style="width:48px;height:48px;object-fit:contain;image-rendering:auto;border-radius:6px;margin-bottom:14px;" />
+        <div style="font-weight:700;font-size:1.1rem;font-family:'Barlow',Arial,sans-serif;margin-bottom:6px;">Initiated</div>
+        <div style="font-size:16px;font-weight:400;line-height:1.6;font-family:'Barlow',Arial,sans-serif;">Action has been taken into consideration through a budget allocation or cabinet decision</div>
+      </div>
+      <div class="focus-card" style="min-width:160px;max-width:200px;align-items:flex-start;padding:20px 14px;">
+        <img src="Progress statuses/4.3 Partially Kept.png" alt="Partially Kept" style="width:48px;height:48px;object-fit:contain;image-rendering:auto;border-radius:6px;margin-bottom:14px;" />
+        <div style="font-weight:700;font-size:1.1rem;font-family:'Barlow',Arial,sans-serif;margin-bottom:6px;">Partially Kept</div>
+        <div style="font-size:16px;font-weight:400;line-height:1.6;font-family:'Barlow',Arial,sans-serif;">Steps have been taken to approve the action, as evidenced by a cabinet decision or gazetted bill, but it has not been fully executed</div>
+      </div>
+      <div class="focus-card" style="min-width:160px;max-width:200px;align-items:flex-start;padding:20px 14px;">
+        <img src="Progress statuses/4.4 Kept.png" alt="Kept" style="width:48px;height:48px;object-fit:contain;image-rendering:auto;border-radius:6px;margin-bottom:14px;" />
+        <div style="font-weight:700;font-size:1.1rem;font-family:'Barlow',Arial,sans-serif;margin-bottom:6px;">Kept</div>
+        <div style="font-size:16px;font-weight:400;line-height:1.6;font-family:'Barlow',Arial,sans-serif;">The promise has been fully implemented</div>
+      </div>
+      <div class="focus-card" style="min-width:160px;max-width:200px;align-items:flex-start;padding:20px 14px;">
+        <img src="Progress statuses/4.5 Broken.png" alt="Broken" style="width:48px;height:48px;object-fit:contain;image-rendering:auto;border-radius:6px;margin-bottom:14px;" />
+        <div style="font-weight:700;font-size:1.1rem;font-family:'Barlow',Arial,sans-serif;margin-bottom:6px;">Broken</div>
+        <div style="font-size:16px;font-weight:400;line-height:1.6;font-family:'Barlow',Arial,sans-serif;">The promise has been contradicted or actively reversed</div>
+      </div>
+    </div>
+  </div>
+  <div class="data-sources-section">
+    <div class="focus-title">Data Sources</div>
+    <div class="data-cards" style="margin-bottom: 28px; gap: 20px;">
+      <div class="data-card" style="min-width:260px;max-width:300px;padding:24px 12px;">
+        <span class="data-icon">📄</span>
+        <div>
+          <h3 style="margin-bottom:2px; font-weight: bold;">Publicly Available Information</h3>
+          <p style="margin:0; font-weight: 400;">Publicly available online information from official government sources</p>
+        </div>
+      </div>
+      <div class="data-card" style="min-width:260px;max-width:300px;padding:24px 12px;">
+        <span class="data-icon">📬</span>
+        <div>
+          <h3 style="margin-bottom:2px; font-weight: bold;">Government Responses</h3>
+          <p style="margin:0; font-weight: 400;">Government responses to Right to Information (RTI) requests sent every six months</p>
+        </div>
+      </div>
+      <div class="data-card" style="min-width:260px;max-width:300px;padding:24px 12px;">
+        <span class="data-icon">👥</span>
+        <div>
+          <h3 style="margin-bottom:2px; font-weight: bold;">Crowd-Sourced Updates</h3>
+          <p style="margin:0; font-weight: 400;">Updates submitted by the public and verified by the Parliamentary Research Team at Verité Research</p>
+        </div>
+      </div>
+    </div>
+    <!-- Official Government Sources Q&A -->
+    <div style="max-width:900px;margin:0 auto 0 auto;padding-left:0;padding-right:0;text-align:left;">
+      <strong>What are official government sources?</strong>
+      <p style="margin:8px 0 0 0; line-height:1.6;">
+        Our sources are official government documents and publicly accessible records that provide verified information on progress made on promises by the government. Some of these sources include, but are not limited to, cabinet decisions, budget documents, gazetted documents, acts, annual reports, and data from government websites. Statements made by public officials are not considered as official sources.
+      </p>
+    </div>
+  </div>
+
+  <!-- Visit the Anura Meter Button (moved to bottom) -->
+
+  <div style="max-width:900px;margin:32px auto 24px auto;padding:0 20px;text-align:justify;">
+    <strong>What are we tracking?</strong>
+    <p style="margin:8px 0 0 0; line-height:1.6;">
+      The 22 promises selected for tracking are based on our assessment of the most critical elements of the manifesto that have generated high public interest. This is a best effort initiative, where small mistakes and oversights may occur. We encourage the public to help us crowdsource corrections for any inadvertent errors.
+    </p>
+    <p style="margin:8px 0 0 0; line-height:1.6;">
+      The inclusion or omission of a promise on this platform should not be considered an endorsement. Verité Research takes no responsibility for any opinions, views, conclusions, or representations made, etc., by any individual or organisation based on their engagement with and interpretation of data available through the Anura Meter.
+    </p>
+  </div>
+
+  <div style="width:100%;display:flex;justify-content:center;margin:32px 0 40px 0;">
+    <a href="https://manthri.lk/en/anura-meter" target="_blank" rel="noopener noreferrer" class="anura-btn">Visit the Anura Meter</a>
+  </div>
+
+  <script>
+    // Simple dropdown logic
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.querySelector('.dropdown > button');
+      var content = document.querySelector('.dropdown-content');
+      if(btn && content) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+        });
+        document.body.addEventListener('click', function() {
+          content.style.display = 'none';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
