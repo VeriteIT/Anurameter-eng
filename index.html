@@ -166,6 +166,23 @@
       margin: 24px auto 0 auto;
       padding: 0 20px;
     }
+    .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      word-break: break-word;
+      margin-bottom: 18px;
+      margin-top: 0;
+      text-align: justify;
+    }
+    @media (max-width: 600px) {
+      .about-section {
+        padding: 0 8px;
+      }
+      .about-section p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
     .focus-card p {
       margin: 0;
       text-align: left;
@@ -212,13 +229,20 @@
     .dropdown-content a:hover {
       background: #f5f5f5 !important;
     }
+    .banner-desktop { display: block !important; }
+    .banner-mobile { display: none !important; }
+    @media (max-width: 600px) {
+      .banner-desktop { display: none !important; }
+      .banner-mobile { display: block !important; }
+    }
   </style>
 </head>
 <body>
   <!-- Banner Section -->
   <div class="banner" style="position:relative;">
     <a href="https://manthri.lk/en/anura-meter" target="_blank" rel="noopener noreferrer" style="display:block;">
-      <img src="Anura Meter Banner.png" alt="Anura Meter Banner" style="display:block; width:100%; border:none; box-shadow:none;" />
+      <img src="Anura Meter Banner_English.png" alt="Anura Meter Banner" class="banner-desktop" style="width:100%; border:none; box-shadow:none;" />
+      <img src="English_Mobile_Banner.png" alt="Anura Meter Banner" class="banner-mobile" style="width:100%; border:none; box-shadow:none;" />
     </a>
     <div style="position:absolute;top:20px;right:24px;z-index:2;">
       <div class="dropdown" style="position:relative;display:inline-block;">
@@ -235,7 +259,28 @@
   <div class="about-section container">
     <h2>About the Anura Meter</h2>
     <p style="text-align: justify;">
-      The Anura Meter tracks the progress of selected proposals in President Anura Kumara Dissanayake's 2024 Presidential Election manifesto. The selection focuses on a set of promises considered to be of high public interest. Progress is updated as and when we receive information from the government or other relevant sources. We welcome any assistance that you can provide in improving what is tracked and in updating progress.
+      Anura Meter is an online tracker that monitors the progress of selected promises made in the 2024 presidential election manifesto of President Anura Kumara Dissanayake. The 22 promises selected for tracking focus on proposals considered to be of high public interest and important in relation to economic reforms, governance, anti-corruption, law and order, and social protection.
+    </p>
+    <p style="text-align: justify;">
+      The Manthri.lk team initially analysed the full breadth of manifesto promises in the 2024 presidential election manifesto. President Anura Kumara Dissanayake's manifesto comprised of 1,325 promises. From these, 947 promises had an observable associated action, of which 378 were 'monitorable'. To see this list and learn more about monitorable actions please go to the <a href="https://manthri.lk/en/presidential-election-manifesto-2024" target="_blank" rel="noopener noreferrer">Manifesto Match</a>, and refer to the FAQ pop there, as published ahead of the 2024 Presidential Election.
+    </p>
+    <p style="text-align: justify;">
+      The Manthri.lk team first sought to include all 378 monitorable promises into the Anura Meter. However, this would have been too resource intensive for us to monitor effectively. We then decided to consider only the promises relating to the following important themes: economic reforms, governance, anti-corruption, law and order, and social protection. This then reduced the number of promises to 171.
+    </p>
+    <p style="text-align: justify;">
+      In order to track progress for these 171 promises, we submitted 41 RTI requests to the government ministries and institutions associated with them. Only 23 RTIs were acknowledged, from which only 15 provided usable information. Due to the low level of responses from the government, the team decided to begin with monitoring a small subset of just 22 promises which were judged to be of very high-public interest – but that is just the beginning.
+    </p>
+    <p style="text-align: justify;">
+      Manthri.lk expects to expand the number of promises monitored on the Anura Meter. We will now do this based on public expressions of interest and improved access to information.
+    </p>
+    <p style="text-align: justify;">
+      Here is how we propose to move forward: You can request the addition of a new promise under the 5 current themes by starting a petition on <a href="https://www.change.org/?redirect=false" target="_blank" rel="noopener noreferrer">Change.org</a> and sharing it with us. If the petition has some traction – that is, gets at least 500 signatures, we will host the petition link on the Manthri.lk site for three months, to help with more visibility. If it gets significant public support in that time, at least 5,000 signatures, we will include it in the tracker.
+    </p>
+    <p style="text-align: justify;">
+      The progress of these promises will be updated as and when we receive information from the government or other relevant sources. We invite the public to contribute information by clicking on the "Contribute Information" button on the tracker. For any other assistance you can provide, or questions you’d like to ask, please email: <a href="mailto:manthri@veriteresearch.org">manthri@veriteresearch.org</a>
+    </p>
+    <p style="text-align: justify;">
+      We will keep improving the ability of the public to engage with us and improve the scope of what is monitored on the Anura Meter. We welcome and thank you for your assistance.
     </p>
   </div>
 
