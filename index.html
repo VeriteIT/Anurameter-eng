@@ -78,6 +78,9 @@
       align-items: flex-start;
       gap: 0;
       transition: box-shadow 0.2s;
+      overflow: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     .focus-card:hover {
       box-shadow: 0 8px 24px rgba(60,72,88,0.18);
@@ -187,22 +190,20 @@
       margin: 0;
       text-align: left;
       text-indent: 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     @media (max-width: 700px) {
       .focus-cards {
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
       }
       .focus-card {
-        min-width: 30%;
-        max-width: 32%;
-        flex: 1 1 30%;
+        min-width: 100%;
+        max-width: 100%;
+        flex: 1 1 100%;
         margin-bottom: 18px;
-      }
-      .focus-card:nth-child(n+4) {
-        min-width: 48%;
-        max-width: 49%;
-        flex: 1 1 48%;
+        height: auto;
       }
     }
     .anura-btn {
@@ -271,7 +272,7 @@
       In order to track progress for these 171 promises, we submitted 41 RTI requests to the government ministries and institutions associated with them. Only 23 RTIs were acknowledged, from which only 15 provided usable information. Due to the low level of responses from the government, the team decided to begin with monitoring a small subset of just 22 promises which were judged to be of very high-public interest. Seven of the 30 currently monitored promises were added following public feedback.
     </p>
     <p style="text-align: justify;">
-      Manthri.lk expects to expand the number of promises monitored on the Anura Meter. We will now do this based on public expressions of interest and improved access to information.
+      Manthri.lk expects to continue expanding the number of promises monitored on the Anura Meter. We will now do this based on public expressions of interest and improved access to information.
     </p>
     <p style="text-align: justify;">
       Here is how we propose to move forward: You can request the addition of a new promise under the 5 current themes by starting a petition on <a href="https://www.change.org/?redirect=false" target="_blank" rel="noopener noreferrer">Change.org</a> and sharing it with us. If the petition has some traction – that is, gets at least 500 signatures, we will host the petition link on the Manthri.lk site for three months, to help with more visibility. If it gets significant public support in that time, at least 5,000 signatures, we will include it in the tracker.
@@ -288,7 +289,7 @@
   <div class="container" style="margin-top: 40px;">
     <div class="focus-title">Key Areas of Focus</div>
     <div class="focus-cards" style="flex-wrap:nowrap;overflow:visible;">
-      <div class="focus-card" style="width:220px;height:220px;align-items:flex-start;padding:20px 14px;">
+      <div class="focus-card" style="width:220px;height:auto;min-height:220px;align-items:flex-start;padding:20px 14px;">
         <span class="focus-icon">
           <!-- Social Protection: Heart SVG -->
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 24S4 17 4 10.5C4 7 7 4 10.5 4C12.5 4 14 5.5 14 5.5C14 5.5 15.5 4 17.5 4C21 4 24 7 24 10.5C24 17 14 24 14 24Z" stroke="#111" stroke-width="2" fill="white"/></svg>
@@ -315,7 +316,7 @@
         </span>
         <div>
           <h3>Governance</h3>
-          <p style="margin:0;">Processes and systems of decision making, coordination, and management within the government to ensure greater transparency and accountability</p>
+          <p style="margin:0 0 8px 0;">Processes and systems of decision making, coordination, and management within the government to ensure greater transparency and accountability</p>
         </div>
       </div>
       <div class="focus-card" style="width:220px;height:220px;align-items:flex-start;padding:20px 14px;">
